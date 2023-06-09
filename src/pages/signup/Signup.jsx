@@ -1,9 +1,15 @@
 import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
 import { AuthContext } from '../../providers/AuthProvider';
+import Swal from 'sweetalert2';
+import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 const Signup = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
-    const { createUser } = useContext(AuthContext);
+    const { createUser ,updateStudentProfile ,googleSignin} = useContext(AuthContext);
+    const navigate=useNavigate()
+    const location=useLocation()
+
+    const from =location.state?.from?.pathname || '/'
     const onSubmit = data => {
 
         createUser(data.email, data.password)
@@ -11,6 +17,32 @@ const Signup = () => {
 
                 const loggedUser = result.user;
                 console.log(loggedUser);
+                
+                updateStudentProfile(data.name, data.photoURL)
+                .then(()=>{
+                    const saveStudentProfile={name: data.name,email:data.email}
+                    fetch('http://localhost:5000/studentProfile',{
+                        method:"POST",
+                        headers:{
+                            'content-type':'application/json'
+                        },
+                        body: JSON.stringify(saveStudentProfile)
+                    })
+                    .then(res=>res.json())
+                    .then(data=>{
+                        if(data.insertedId){
+                            reset();
+                            Swal.fire({
+                                position: 'top-end',
+                                icon:'success',
+                                title:'user created successfully',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            Navigate('/')
+                        }
+                    })
+                })
             })
             .catch(error => console.log(error))}
 
@@ -18,6 +50,27 @@ const Signup = () => {
 
 
 
+
+            const handleGoogleSignIn = () => {
+                googleSignin()
+                    .then(result => {
+                        const userLogin = result.user;
+                        console.log(userLogin);
+                        const saveUser = { name: userLogin.displayName, email: userLogin.email }
+                        fetch('http://localhost:5000/studentProfile', {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(saveUser)
+                        })
+                            .then(res => res.json())
+                            .then(() => {
+                                navigate(from, { replace: true });
+                            })
+                    })
+            }
+        
 
     return (
         <div>
@@ -65,6 +118,7 @@ const Signup = () => {
                                 <input className="btn btn-primary" type="submit" value="Sign Up" />
                             </div>
                         </form>
+                        <button onClick={handleGoogleSignIn}>google sign in</button>
         </div>
     );
 };

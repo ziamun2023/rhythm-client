@@ -7,7 +7,8 @@ const SigninAcc = () => {
  
 
     const [disabled, setDisabled] = useState(true);
-    const { signIn } = useContext(AuthContext);
+    const { signIn ,googleSignin} = useContext(AuthContext);
+
     const navigate=useNavigate()
     const location=useLocation()
 
@@ -16,6 +17,28 @@ const SigninAcc = () => {
     useEffect(() => {
         loadCaptchaEnginge(6);
     }, [])
+
+
+
+    const handleGoogleSignIn = () => {
+        googleSignin()
+            .then(result => {
+                const userLogin = result.user;
+                console.log(userLogin);
+                const saveUser = { name: userLogin.displayName, email: userLogin.email }
+                fetch('http://localhost:5000/studentProfile', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(saveUser)
+                })
+                    .then(res => res.json())
+                    .then(() => {
+                        navigate(from, { replace: true });
+                    })
+            })
+    }
 
 
 
@@ -83,6 +106,9 @@ const SigninAcc = () => {
                             </div>
                         </form>
                         <p><small>New Here? <Link to="/signup">Create an account</Link> </small></p>
+                        <button onClick={handleGoogleSignIn}>
+                            Google sign in
+                        </button>
         </div>
     );
 };
