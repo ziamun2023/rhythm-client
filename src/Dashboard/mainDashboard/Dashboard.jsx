@@ -4,6 +4,12 @@ import { Link } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 
 const Dashboard = () => {
+
+  const IfAdminExist=true
+
+
+
+
     return (
         <div>
             <div className="drawer lg:drawer-open">
@@ -16,9 +22,23 @@ const Dashboard = () => {
   <div className="drawer-side">
     <label htmlFor="my-drawer-2" className="drawer-overlay"></label> 
     <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
-      {/* Sidebar content here */}
-      <li><Link to='/mycart'>mycart</Link></li>
-      <li><a>Sidebar Item 2</a></li>
+      {
+        IfAdminExist?<>
+        <li><Link>Admin Home</Link></li>
+        <li><Link to='/dashboard/allProfile'>All students</Link></li>
+   
+        <li><Link>Manage Classes</Link></li>
+       
+        <li><Link>Add Class</Link></li>
+        <li><Link>Manage Purchase</Link></li>
+  
+        
+        
+        
+        </>:<>   <li><Link to='/mycart'>mycart</Link></li>
+        <li><a>Sidebar Item 2</a></li></>
+      }
+   
     </ul>
   
   </div>

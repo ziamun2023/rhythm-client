@@ -11,6 +11,7 @@ import ClassPage from "../pages/classesPage/ClassPage";
 import PrivateRoutes from "../private/PrivateRoutes";
 import Dashboard from "../Dashboard/mainDashboard/Dashboard";
 import MyCart from "../Dashboard/mycartitem/MyCart";
+import AllStudent from "../Dashboard/allStudentProfile/AllStudent";
 
 
 
@@ -45,7 +46,12 @@ import MyCart from "../Dashboard/mycartitem/MyCart";
         {
           path:'mycart',
           element:<MyCart></MyCart>
+        },
+        {
+          path:'allProfile',
+          element:<AllStudent/>
         }
+      
       
       ]
     }
