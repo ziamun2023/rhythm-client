@@ -7,6 +7,11 @@ import Home from "../pages/Home/Home";
 import Signup from "../pages/signup/Signup";
 
 import SigninAcc from "../pages/loginpage/SigninAcc";
+import ClassPage from "../pages/classesPage/ClassPage";
+import PrivateRoutes from "../private/PrivateRoutes";
+import Dashboard from "../Dashboard/mainDashboard/Dashboard";
+import MyCart from "../Dashboard/mycartitem/MyCart";
+
 
 
 
@@ -26,7 +31,22 @@ import SigninAcc from "../pages/loginpage/SigninAcc";
         {
           path: '/signup',
           element:<Signup/>
+        },
+        {
+          path:'/allclass',
+          element:<PrivateRoutes><ClassPage/></PrivateRoutes>
         }
       ]
     },
+    {
+      path:'dashboard',
+      element:<Dashboard></Dashboard>,
+      children:[
+        {
+          path:'mycart',
+          element:<MyCart></MyCart>
+        }
+      
+      ]
+    }
   ]);

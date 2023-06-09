@@ -1,8 +1,28 @@
-import React, { useEffect, useState } from 'react';
-import { Pagination } from "swiper";
+import React, { useContext, useEffect, useRef, useState } from "react";
+// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
+// Import Swiper styles
+
+import "swiper/css/free-mode";
+import "swiper/css/pagination";
+
+
+
+// import required modules
+import { FreeMode, Pagination } from "swiper";
+import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
+import { useLocation, useNavigate } from "react-router-dom";
+import Cards from "./Cards";
+
+
+
+
+
+
 const Popularclass = () => {
+  
     const [classes,setClasses]=useState([])
 
 useEffect(()=>{
@@ -10,47 +30,22 @@ useEffect(()=>{
     .then(res=>res.json())
     .then(data=>setClasses(data))
 },[])
-console.log
-
     return (
         <div>
-            <p className='text-3xl'>popular classes</p>
-<div>
-<Swiper
-        slidesPerView={1}
-        spaceBetween={10}
+           <Swiper
+        slidesPerView={3}
+        spaceBetween={30}
+        freeMode={true}
         pagination={{
           clickable: true,
         }}
-        breakpoints={{
-          "@0.00": {
-            slidesPerView: 1,
-            spaceBetween: 10,
-          },
-          "@0.75": {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          "@1.00": {
-            slidesPerView: 3,
-            spaceBetween: 40,
-          },
-          "@1.50": {
-            slidesPerView: 4,
-            spaceBetween: 50,
-          },
-        }}
-        modules={[Pagination]}
+        modules={[FreeMode, Pagination]}
         className="mySwiper"
       >
-        {
-            classes.map(items=> <SwiperSlide key={items.id}>{items.name}
-           <img src= {items.image} alt="" /></SwiperSlide>)
-        }
-      
-     
+ {
+    classes.map(items=><SwiperSlide > <Cards key={items._id} items={items}></Cards></SwiperSlide>)
+ }
       </Swiper>
-</div>
         </div>
     );
 };
