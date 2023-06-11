@@ -1,18 +1,24 @@
 import React, { useContext } from 'react';
-import { AuthContext } from "../../providers/AuthProvider";
-import Swal from "sweetalert2";
-import { useLocation, useNavigate } from "react-router-dom";
-import UseFavCart from '../../hooks/UseFavCart';
+import { AuthContext } from '../../providers/AuthProvider';
 import Allusers from '../../hooks/Allusers';
-const Cards = ({items}) =>{ 
-    const { name, image, price, _id } = items;
+import Swal from 'sweetalert2';
+import UseFavCart from '../../hooks/UseFavCart';
+import { useLocation, useNavigate } from 'react-router-dom';
+
+const ClassCards = ({items}) => {
+    const {image,name,price,numberofStudent,instructorName,availableSeat,_id}=items
+
+
     const {user,admins} = useContext(AuthContext);
     const[,refetch]=UseFavCart()
  
     const navigate = useNavigate();
     const location = useLocation();
 
-  
+
+
+
+
     const student=user?.email
     // console.log(student)
     // console.log(admins)
@@ -22,6 +28,8 @@ const Cards = ({items}) =>{
   
     const AdminAccess=admins.find(AdminUser=>AdminUser.email===user?.email)
 
+
+    
     const handleAddToCart = item => {
         // console.log(item);
         if(user && user.email){
@@ -63,33 +71,18 @@ const Cards = ({items}) =>{
         }
     }
     return (
-        <>
-             <div className={'shadow-lg'}>
-    <img className='w-[400px] h-[400px]' src={items.image} alt="" />
-   <div className='flex justify-around   text-2xl nav w-56 rounded-xl py-2 '>
-   <p className='text-white'>{items.name}</p> <p className=' rounded-xl hover:bg-slate-100 duration-300  hover:text-black bg-black px-2'>${items.price}</p>
+        <div className='shadow-lg '>
+    <img className='w-[400px] h-[400px] my-auto mx-auto' src={image} alt="" />
+   <div className='flex justify-around ms-5  text-2xl nav w-56 rounded-xl py-2 '>
+   <p className='text-white'>{name}</p> <p className=' rounded-xl hover:bg-slate-100 duration-300  hover:text-black bg-black px-2'>${items.price}</p>
    </div>
  
 {
     AdminAccess?
-   "": <button className="btn btn-secondary my-4" onClick={()=>handleAddToCart(items)}>add to cart</button>
+   "": <button className="btn nav  ms-5  my-4" onClick={()=>handleAddToCart(items)}>add to cart</button>
 }
-<ul class="circles">
-          
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-  </ul>
     </div>
-        </>
     );
 };
 
-export default Cards;
+export default ClassCards;

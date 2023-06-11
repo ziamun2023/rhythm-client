@@ -24,8 +24,9 @@ const SigninAcc = () => {
         googleSignin()
             .then(result => {
                 const userLogin = result.user;
-                console.log(userLogin);
+                // console.log(userLogin);
                 const saveUser = { name: userLogin.displayName, email: userLogin.email }
+         
                 fetch('http://localhost:5000/studentProfile', {
                     method: 'POST',
                     headers: {
@@ -53,6 +54,7 @@ const SigninAcc = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+            
                 navigate(from,{replace: true})
             })
     }
@@ -76,7 +78,9 @@ const SigninAcc = () => {
 
 
     return (
-        <div>
+      <>
+        <div className='w-[500px] mx-auto nav rounded-xl my-20'>
+              
             <form onSubmit={handleLogin} className="card-body">
                             <div className="form-control">
                                 <label className="label">
@@ -108,8 +112,13 @@ const SigninAcc = () => {
                         <p><small>New Here? <Link to="/signup">Create an account</Link> </small></p>
                         <button onClick={handleGoogleSignIn}>
                             Google sign in
+                            
                         </button>
+                   
         </div>
+       
+     
+     </>
     );
 };
 

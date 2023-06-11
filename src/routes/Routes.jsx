@@ -12,6 +12,9 @@ import PrivateRoutes from "../private/PrivateRoutes";
 import Dashboard from "../Dashboard/mainDashboard/Dashboard";
 import MyCart from "../Dashboard/mycartitem/MyCart";
 import AllStudent from "../Dashboard/allStudentProfile/AllStudent";
+import StudentDashboard from "../Dashboard/StudetnDashboard/StudentDashboard";
+import UserHome from "../Dashboard/StudetnDashboard/UserHome";
+
 
 
 
@@ -40,13 +43,10 @@ import AllStudent from "../Dashboard/allStudentProfile/AllStudent";
       ]
     },
     {
-      path:'dashboard',
+      path:'Admindashboard',
       element:<PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
       children:[
-        {
-          path:'mycart',
-          element:<MyCart></MyCart>
-        },
+      
         {
           path:'allProfile',
           element:<AllStudent/>
@@ -54,5 +54,20 @@ import AllStudent from "../Dashboard/allStudentProfile/AllStudent";
       
       
       ]
+    },
+    {
+      path:'studentDash',
+      element:<PrivateRoutes><StudentDashboard></StudentDashboard></PrivateRoutes>,
+children:[
+  
+  {
+    path:'mycart',
+    element:<MyCart></MyCart>
+  },
+  {
+    path:'userhome',
+    element:<UserHome></UserHome>
+  }
+]
     }
   ]);

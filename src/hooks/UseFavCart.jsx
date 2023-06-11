@@ -4,19 +4,40 @@ import { AuthContext } from '../providers/AuthProvider';
 
 
 
-const UseFavCart = () => {
-const {user}=useContext(AuthContext)
+const UseFavCart = () =>{
+  const {user}=useContext(AuthContext)
+  
+  
+  
+  const { refetch, data: cart=[] } = useQuery({
+      queryKey: ['carts',user?.email],
+      queryFn: async () => {
+          const res=await fetch(`http://localhost:5000/carts?email=${user?.email}`)
+          return res.json()
+  
+         
+        },
+    })
+    return [cart,refetch]
+  };
+  
 
-const { refetch, data: cart=[] } = useQuery({
-    queryKey: ['cart',user?.email],
-    queryFn: async () => {
-        const res=await fetch(`http://localhost:5000/carts?email=${user?.email}`)
-        return res.json()
 
-       
-      },
-  })
-  return [cart,refetch]
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export default UseFavCart;

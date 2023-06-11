@@ -5,7 +5,7 @@ import UseFavCart from "../../hooks/UseFavCart";
 const MyCart = () => {
     const [cart,refetch]=UseFavCart()
     
-    const  totalPrice=cart.reduce((sum,item)=>item.price+sum,0 )
+    const  totalPrice= cart.reduce((sum,item)=>item.price+sum,0 )
     const handleDeleteCart=cartitem=>{
         Swal.fire({
             title: 'Are you sure?',

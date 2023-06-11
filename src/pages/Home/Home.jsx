@@ -4,9 +4,25 @@ import Popularclass from '../../component/popularClasss/Popularclass';
 
 const Home = () => {
     return (
-        <div  className='mx-20'>
-            <Banner/>
+        <div  className=' mx-20 '>
+              <Banner/> 
             <Popularclass/>
+         <div class="" >
+         <ul class="circles">
+          
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+  </ul>
+    </div >
+        
         </div>
     );
 };

@@ -3,108 +3,168 @@
         "_id": "642c155b2c4774f05c36eeaa",
         "name": "Piano",
   
-        "image": "https://ibb.co/gJKCq6s",
-        "numberofStudent": "salad",
-        "price": 14.7
+        "image": "https://i.postimg.cc/Hs52Yj1s/3d-fluency-piano-1.png",
+        "numberofStudent":14,
+        "price": 14.7,
+        "instructorName":"Rebeka",
+        "availableSeat":41
+
+
     },
     {
         "_id": "642c155b2c4774f05c36eeb9",
         "name": "Guitar",
       
-        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-1-370x247.jpg",
-        "numberofStudent": "drinks",
-        "price": 14.7
+        "image": "https://i.postimg.cc/g0p3kKqg/Untitled-design-3.png",
+        "numberofStudent": 32,
+        "price": 14.7,
+        "instructorName":"Harry dev",
+        "availableSeat":22
+
+
     },
     {
         "_id": "642c155b2c4774f05c36ee7c",
         "name": "Drums",
         
-        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-5-370x247.jpg",
-        "numberofStudent": "popular",
-        "price": 14.5
+        "image": "https://i.postimg.cc/t48phrmz/Untitled-design-4.png",
+        "numberofStudent": 54,
+        "price": 14.5,
+        "instructorName":"Martin Luis",
+        "availableSeat":5
+
+
     },
     {
         "_id": "642c155b2c4774f05c36ee88",
         "name": "Saxophone",
-        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-2-370x247.jpg",
-        "numberofStudent": "dessert",
-        "price": 12.5
+        "image": "https://i.postimg.cc/fLrKL9bk/Untitled-design-5.png",
+        "numberofStudent": 32,
+        "price": 12.5,
+        "instructorName":"Liza",
+        "availableSeat":22
+
+
     },
     {
         "_id": "642c155b2c4774f05c36ee7a",
         "name": "Bell",
-        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-5-370x247.jpg",
-        "numberofStudent": "popular",
-        "price": 14.5
+        "image": "https://i.postimg.cc/13VLZDyC/Bongos-3.png",
+        "numberofStudent": 4,
+        "price": 14.5,
+        "instructorName":"Monalisa",
+        "availableSeat":11
+
+
     },
     {
         "_id": "642c155b2c4774f05c36ee8c",
         "name": "Bass drum",
-        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-2-370x247.jpg",
-        "numberofStudent": "dessert",
-        "price": 12.5
+        "image": "https://i.postimg.cc/wjW8Vwfr/Untitled-design-6.png",
+        "numberofStudent": 30,
+        "price": 12.5,
+        "instructorName":"Robert Downy",
+        "availableSeat":21
+
+
     },
     {
         "_id": "642c155b2c4774f05c36ee94",
         "name": "Bass guitar",
-        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-2-370x247.jpg",
-        "numberofStudent": "pizza",
-        "price": 12.5
+        "image": "https://i.postimg.cc/T3QLcXXX/Untitled-design-7.png",
+        "numberofStudent": 24,
+        "price": 12.5,
+        "instructorName":"Tony faze",
+        "availableSeat":5
+
+
     },
     {
         "_id": "642c155b2c4774f05c36ee9e",
         "name": "Electronic Drums",
-        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-8-370x247.jpg",
-        "numberofStudent": "pizza",
-        "price": 12.9
+        "image": "https://i.postimg.cc/gcCm1tKL/Untitled-design-8.png",
+        "numberofStudent": 15,
+        "price": 12.9,
+        "instructorName":"Michel Jorge",
+        "availableSeat":12
+
+
     },
     {
         "_id": "642c155b2c4774f05c36eea6",
         "name": " Harmonica",
-        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-3-370x247.jpg",
-        "numberofStudent": "salad",
-        "price": 13.5
+        "image": "https://i.postimg.cc/26H34dpF/Untitled-design-9.png",
+        "numberofStudent": 10,
+        "price": 13.5,
+        "instructorName":"Otalia zaima",
+        "availableSeat":22
+
+
     },
     {
         "_id": "642c155b2c4774f05c36eeaf",
         "name": "Tambourine ",
-        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-2-370x247.jpg",
-        "numberofStudent": "soup",
-        "price": 12.5
+        "image": "https://i.postimg.cc/7Yfhvtdg/Bongos-2.png",
+        "numberofStudent": 44,
+        "price": 12.5,
+        "instructorName":"Zeniya",
+        "availableSeat":13
+
+
     },
     {
         "_id": "642c155b2c4774f05c36ee89",
         "name": "Recorder",
-        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-3-370x247.jpg",
-        "numberofStudent": "dessert",
-        "price": 13.5
+        "image": "https://i.postimg.cc/1R08SY9T/casual-life-3d-vinyl-record-player-1.png",
+        "numberofStudent": 36,
+        "price": 13.5,
+        "instructorName":"Dabid hatson",
+        "availableSeat":14
+
+
     },
     {
         "_id": "642c155b2c4774f05c36ee8a",
         "name": "Flute",
-        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-2-370x247.jpg",
-        "numberofStudent": "dessert",
-        "price": 12.5
+        "image": "https://i.postimg.cc/TPb45xST/Bongos-1.png",
+        "numberofStudent": 45,
+        "price": 12.5,
+        "instructorName":"Marry jane",
+        "availableSeat":5
+
+
     },
     {
         "_id": "642c155b2c4774f05c36ee96",
         "name": "Bongos",
-        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-8-370x247.jpg",
-        "numberofStudent": "pizza",
-        "price": 9.5
+        "image": "https://i.postimg.cc/nh2zb8Tc/Bongos.png",
+        "numberofStudent": 19,
+        "price": 9.5,
+        "instructorName":"Rocky",
+        "availableSeat":11
+
+
     },
     {
         "_id": "642c155b2c4774f05c36ee81",
         "name": "Keyboards",
-        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-2-370x247.jpg",
-        "numberofStudent": "offered",
-        "price": 10.5
+        "image": "https://i.postimg.cc/YCW4JDZv/Untitled-design-11.png",
+        "numberofStudent": 22,
+        "price": 10.5,
+        "instructorName":"Harry",
+        "availableSeat":15
+
+
     },
     {
         "_id": "642c155b2c4774f05c36ee84",
         "name": "Ukulele",
-        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-4-370x247.jpg",
-        "numberofStudent": "dessert",
-        "price": 14.5
+        "image": "https://i.postimg.cc/D0LZR9J5/Untitled-design-10.png",
+        "numberofStudent": 50,
+        "price": 14.5,
+        "instructorName":"Dabid Atson",
+        "availableSeat":20
+
+
     }
 ]
