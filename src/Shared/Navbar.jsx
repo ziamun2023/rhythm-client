@@ -126,7 +126,7 @@ const [cart]=UseFavCart()
           </li> */}
       {
         AdminAccess  &&
-        <>    <Link to='/Admindashboard'>
+        <>    <Link to='/Admindashboard/adminHome'>
         <li>
           <button className="btn">
            Admin

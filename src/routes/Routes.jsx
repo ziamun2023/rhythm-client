@@ -14,6 +14,7 @@ import MyCart from "../Dashboard/mycartitem/MyCart";
 import AllStudent from "../Dashboard/allStudentProfile/AllStudent";
 import StudentDashboard from "../Dashboard/StudetnDashboard/StudentDashboard";
 import UserHome from "../Dashboard/StudetnDashboard/UserHome";
+import AdminHome from "../Dashboard/mainDashboard/AdminHome";
 
 
 
@@ -50,6 +51,10 @@ import UserHome from "../Dashboard/StudetnDashboard/UserHome";
         {
           path:'allProfile',
           element:<AllStudent/>
+        },
+        {
+          path:'adminHome',
+          element:<AdminHome/>
         }
       
       
