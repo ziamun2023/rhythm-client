@@ -31,7 +31,7 @@ const AllTheClassManagement = () => {
         Swal.fire({
             position: 'top-end',
             icon: 'success',
-            title: 'Instructor has made',
+            title: 'Class  has been approved',
             showConfirmButton:false,
             timer:1500
             
@@ -40,6 +40,71 @@ const AllTheClassManagement = () => {
   })
     }
 
+
+
+    const handledeny=(id)=>{
+        console.log(id)
+  fetch(`http://localhost:5000/allclass/deny/${id}`,{
+    method:'PATCH'
+  })
+  .then(res=>res.json())
+  .then(data=>{
+    // console.log(data)
+    if(data.modifiedCount){
+        refetch()
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Class has been denied ',
+            showConfirmButton:false,
+            timer:1500
+            
+        })
+    }
+  })
+    }
+
+
+
+
+
+
+    const handleUpdate=(event,_id)=>{
+        event.preventDefault()
+            const form=event.target
+          
+            const comment=form.comment.value
+            
+    const feedback={comment}
+        
+    
+    
+    
+    
+    
+    
+        fetch(`https://localhost:5000/updatefeedback/${id}`,{
+            method: "PUT",
+            headers: {'Content-Type':'application/json'},
+            body : JSON.stringify(feedback)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            if(data.modifiedCount>0){
+                Swal.fire({
+                  title: 'success!',
+                  text: 'Successfully Updated',
+                  icon: 'success',
+                  confirmButtonText: 'Cool'
+                })
+                navigate('/totalclassmanagement')
+              
+               }
+            
+        })
+    }
+    
+    
 
 
 
@@ -93,12 +158,17 @@ allInstClass.map((items,index)=>  <tr>
 <td>{items.status}</td>
 <th>
   <button onClick={()=>handleApprove(items._id)} className="btn btn-ghost btn-xs bg-green-500  text-black mx-2">Approve</button>
-  <button className="btn btn-ghost btn-xs text-black bg-red-500">Deny</button>
- 
+  <button  onClick={()=>handledeny(items._id)} className="btn btn-ghost btn-xs text-black bg-red-500">Deny</button>
+  
 
 </th>
 <th>
-<button className="btn btn-ghost btn-xs text-black bg-yellow-500">feedback</button>
+<div className="  text-black">
+    <form  onSubmit={()=>handleUpdate(items._id)}   action="">
+        <input  className='bg-yellow-600 h-10'  name='comment'  type="text" />
+        <input  className='bg-red-500 text-black btn' type='submit' value='send' />
+    </form>
+</div>
  
 
 </th>
