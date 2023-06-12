@@ -21,7 +21,7 @@ const GiveFeedBack = () => {
     
     
     
-        fetch(`http://localhost:5000/updatedoc/${id}`,{
+        fetch(`https://music-server-psi.vercel.app/updatedoc/${id}`,{
             method: "PUT",
             headers: {'Content-Type':'application/json'},
             body : JSON.stringify(chaged)

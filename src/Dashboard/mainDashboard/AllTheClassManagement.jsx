@@ -13,7 +13,7 @@ const AllTheClassManagement = () => {
     
 
     const {data: allInstClass =[], refetch}=useQuery(['allClass'],async()=>{
-        const res=await fetch('http://localhost:5000/allclass')
+        const res=await fetch('https://music-server-psi.vercel.app/allclass')
         return res.json()
     })
 
@@ -21,7 +21,7 @@ const AllTheClassManagement = () => {
     
     const handleApprove=(id)=>{
         console.log(id)
-  fetch(`http://localhost:5000/allclass/approve/${id}`,{
+  fetch(`https://music-server-psi.vercel.app/allclass/approve/${id}`,{
     method:'PATCH'
   })
   .then(res=>res.json())
@@ -45,7 +45,7 @@ const AllTheClassManagement = () => {
 
     const handledeny=(id)=>{
         console.log(id)
-  fetch(`http://localhost:5000/allclass/deny/${id}`,{
+  fetch(`https://music-server-psi.vercel.app/allclass/deny/${id}`,{
     method:'PATCH'
   })
   .then(res=>res.json())

@@ -21,7 +21,7 @@ const MyCart = () => {
             confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
             if (result.isConfirmed) {
-             fetch(`http://localhost:5000/carts/${cartitem._id}`,{
+             fetch(`https://music-server-psi.vercel.app/carts/${cartitem._id}`,{
                 method:"DELETE"
              })
              .then(res=>res.json())

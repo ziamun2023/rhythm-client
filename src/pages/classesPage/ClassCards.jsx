@@ -36,7 +36,7 @@ const ClassCards = ({items}) => {
             const cartItem = {classId: _id, name, image, price, email: user.email , availableSeat: item.availableSeat,
                 instructorEmail: item.instructorEmail,
                 instructorName: item.instructorName}
-            fetch('http://localhost:5000/postfav', {
+            fetch('https://music-server-psi.vercel.app/postfav', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

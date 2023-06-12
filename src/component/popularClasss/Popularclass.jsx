@@ -25,8 +25,14 @@ import { Slide } from "react-awesome-reveal";
 
 const Popularclass = () => {
   const {isDarkMode}=useContext(AuthContext)
+
   
 const allclass=UseAllclass()
+const onlyApprovedClass=allclass[0].filter(item=>item.status==='approved')
+console.log(onlyApprovedClass)
+console.log(allclass)
+
+
     return (
    <div >
       <div className="hidden lg:block">
@@ -43,7 +49,7 @@ const allclass=UseAllclass()
         className="mySwiper "
       >
  {
-    allclass[0].slice(0,6).map(items=><SwiperSlide > <Cards key={items._id} items={items}></Cards></SwiperSlide>)
+    onlyApprovedClass.slice(0,6).map(items=><SwiperSlide > <Cards key={items._id} items={items}></Cards></SwiperSlide>)
  }
 <p className="text-center my-10">
 <button className="mx-auto nav btn border-0 text-white text-2xl "> <Link to='/allclass'>Show All</Link></button>
@@ -54,7 +60,7 @@ const allclass=UseAllclass()
       </div>
       <div className="lg:hidden">
       {
-    allclass[0].slice(0,6).map(items=><SwiperSlide > <Cards key={items._id} items={items}></Cards></SwiperSlide>)
+    onlyApprovedClass.slice(0,6).map(items=><SwiperSlide > <Cards key={items._id} items={items}></Cards></SwiperSlide>)
  }
       </div>
    </div>

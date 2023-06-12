@@ -3,7 +3,7 @@ import { useState } from "react"
 export const allusers=()=>{
     const [admin,setAdmin]=useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/studentProfile')
+        fetch('https://music-server-psi.vercel.app/studentProfile')
         .then(res=>res.json())
         .then(data=>setAdmin(data))
     },[])

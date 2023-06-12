@@ -28,7 +28,7 @@ const AuthProvider = ({ children }) => {
     
 
     useEffect(()=>{
-        fetch('http://localhost:5000/studentProfile')
+        fetch('https://music-server-psi.vercel.app/studentProfile')
         .then(res=>res.json())
         .then(data=>setAdmin(data))
     },[])

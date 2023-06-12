@@ -20,8 +20,10 @@ const AddNewClass = () => {
          event.preventDefault()
          const form =event.target
          const totalpurchase=0;
-         const instructorName=theInstructorName.name
-         const instructorEmail=user.email
+        //  const instructorName=theInstructorName.name
+         const instructorName=form.instructorName.name
+        //  const instructorEmail=user.email
+         const instructorEmail=form.instructorEmail.value
          const image=form.image.value
          const name=form.name.value
          const status=form.status._wrapperState.initialValue
@@ -36,7 +38,7 @@ const AddNewClass = () => {
  
  
  
-         fetch('http://localhost:5000/postclass',{
+         fetch('https://music-server-psi.vercel.app/postclass',{
              method:"POST",
              headers:{'Content-Type':'application/json'},
              body: JSON.stringify(classAdded)
@@ -70,8 +72,8 @@ const AddNewClass = () => {
     <span className="label-text">Instructor name</span>
     
   </label>
-  <input  placeholder="Type here" name='instructorName' value={theInstructorName?.name} className="input input-bordered w-full max-w-xs" />
-
+  <input type='text' placeholder="Type here" name='instructorName' className="input input-bordered w-full max-w-xs" />
+  {/* value={theInstructorName?.name}  */}
 </div>
 
 <div className="form-control w-full max-w-xs">
@@ -79,8 +81,8 @@ const AddNewClass = () => {
     <span className="label-text"> instructorEmail</span>
     
   </label>
-  <input  placeholder="Pending" name='instructorEmail' value={user?.email} className="input input-bordered w-full max-w-xs" />
-
+  <input type='text'  placeholder="Pending" name='instructorEmail'  className="input input-bordered w-full max-w-xs" />
+  {/* value={user?.email} */}
 </div>
 <div className="form-control w-full max-w-xs">
   <label className="label">

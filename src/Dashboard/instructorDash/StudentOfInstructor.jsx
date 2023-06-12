@@ -7,7 +7,7 @@ const StudentOfInstructor = () => {
     const [liked,setLiked]=useState([])
     console.log(liked)
     useEffect(()=>{
-        fetch('http://localhost:5000/peopleliked')
+        fetch('https://music-server-psi.vercel.app/peopleliked')
         .then(res=>res.json())
         .then(data=>setLiked(data))
     },[])
