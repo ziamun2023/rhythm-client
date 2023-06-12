@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import InstructorsCards from '../../pages/instructorPage/InstructorsCards';
 import { Fade, Slide } from 'react-awesome-reveal';
 
@@ -11,7 +11,7 @@ const PopularInstructor = () => {
     },[])
     return (
     <>
-    <Slide>Popular Instructors</Slide>
+    <Slide> <p className='text-5xl text-center text-bold my-10 bg-gray-600 text-white rounded-xl py-3'>Popular Instructor</p></Slide>
    <Fade>
    <div className='grid lg:grid-cols-3  gap-7 px-14 py-10'>
 

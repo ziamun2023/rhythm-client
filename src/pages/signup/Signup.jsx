@@ -20,7 +20,7 @@ const Signup = () => {
                 updateStudentProfile(data.name, data.photoURL)
                     .then(() => {
                         const saveUser = { name: data.name, email: data.email }
-                        fetch('http://localhost:5000/studentProfile', {
+                        fetch('https://music-server-psi.vercel.app/studentProfile', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'
@@ -64,51 +64,6 @@ const Signup = () => {
 
 
 
-    // const { register, handleSubmit, reset, formState: { errors } } = useForm();
-    // const { createUser ,updateStudentProfile ,googleSignin} = useContext(AuthContext);
-    // const navigate=useNavigate()
-    // const location=useLocation()
-
-    // const from =location.state?.from?.pathname || '/'
-    // const onSubmit = data => {
-
-    //     createUser(data.email, data.password)
-    //         .then(result => {
-
-    //             const loggedUser = result.user;
-    //             console.log(loggedUser);
-                
-    //             updateStudentProfile(data.name, data.photoURL)
-    //             .then(()=>{
-    //                 const saveStudentProfile={name: data.name,email:data.email}
-                
-    //                 fetch('http://localhost:5000/studentProfile',{
-    //                     method:"POST",
-    //                     headers:{
-    //                         'content-type':'application/json'
-    //                     },
-    //                     body: JSON.stringify(saveStudentProfile)
-    //                 })
-    //                 .then(res=>res.json())
-    //                 .then(data=>{
-    //                     if(data.insertedId){
-    //                         reset();
-    //                         Swal.fire({
-    //                             position: 'top-end',
-    //                             icon:'success',
-    //                             title:'user created successfully',
-    //                             showConfirmButton: false,
-    //                             timer: 1500
-    //                         })
-    //                         Navigate('/')
-    //                     }
-    //                 })
-    //             })
-    //         })
-    //         .catch(error => console.log(error))}
-
-
-
 
 
 
@@ -119,7 +74,7 @@ const Signup = () => {
                         console.log(userLogin);
                         const saveUser = { name: userLogin.displayName, email: userLogin.email }
                    
-                        fetch('http://localhost:5000/studentProfile', {
+                        fetch('https://music-server-psi.vercel.app/studentProfile', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'

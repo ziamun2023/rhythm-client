@@ -16,6 +16,7 @@ import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
 import Cards from "./Cards";
 import UseAllclass from "../../hooks/UseAllclass";
+import { Slide } from "react-awesome-reveal";
 
 
 
@@ -30,7 +31,7 @@ const allclass=UseAllclass()
    <div >
       <div className="hidden lg:block">
       <div className={isDarkMode?" bg-black" : "bg-white"}>
-          <p>Popular Classes</p>
+      <Slide> <p className='text-5xl text-center text-bold my-10 bg-gray-600 text-white rounded-xl py-3'>Popular Classes</p></Slide>
            <Swiper
         slidesPerView={4}
         spaceBetween={30}
