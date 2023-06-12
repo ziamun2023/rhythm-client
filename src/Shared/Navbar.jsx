@@ -5,6 +5,7 @@ import UseFavCart from "../hooks/UseFavCart";
 import DayNightToggle from 'react-day-and-night-toggle'
 import admin from '../assets/icons8-admin-50 (1).png'
 import instructorIcon from '../assets/icons8-training-50.png'
+import { BsFillBagFill } from "react-icons/bs";
 // import { allusers } from "../hooks/user";
 
 import Allusers from "../hooks/Allusers";
@@ -75,12 +76,14 @@ const [cart]=UseFavCart()
             tabIndex={0}
             className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <li>
+          <Link to='/'>
+          <li>
               <a>Home</a>
-            </li>
-            <li>
+            </li></Link>
+          
+            <Link to='/instructorPage'>  <li>
               <a>Instructors</a>
-            </li>
+            </li></Link>
             <Link to="/allclass">
               <li>
                 <a>Classes</a>
@@ -113,13 +116,19 @@ const [cart]=UseFavCart()
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-          <li className="my-auto">
-            <a>Home</a>
-          </li>
+       
+          <li  className="my-auto">
+          <Link to='/'>
+          <a>Home</a>
+          </Link>
+             
+            </li>
+            <li  className="my-auto">
+            <Link to='/instructorPage'>
+            <a>Instructors</a> </Link>
+           
+            </li>
          
-          <li className="my-auto">
-            <a>Instructors</a>
-          </li>
           <li className="my-auto">
           <Link to="/allclass">
           <a>Classes</a>
@@ -153,14 +162,15 @@ const [cart]=UseFavCart()
       }
       {
       user ?
-      <>    <Link to='studentDash/mycart'>
-      <li>
-        <div  className={isVisible ? 'hidden' : 'block '}>
-      <p>  Student Dashboard </p>
-          <div className="badge badge-secondary">{cart?.length}</div>
-        </div>
+      <>     
+      <li className="my-auto ">
+      <Link to='studentDash/mycart'><div  className={isVisible ? 'hidden' : 'block '}>
+    
+    <div className="badge badge-secondary py-4 ">   <p className="bg-white text-black rounded-xl me-3 px-2 "> <div className="flex" >
+    <BsFillBagFill ></BsFillBagFill> <p>Dashboard</p></div></p><p className="text-1xl">{cart?.length}</p></div>
+  </div>    </Link>
       </li>
-    </Link></>: ''
+   </>: ''
       }{
         instructorAccess &&  <Link to='/InstructorDashboard/instructorhome'>
         <li className="my-auto" >

@@ -95,7 +95,7 @@ cart.map((cartitem,index)=> <tr key={cartitem._id}>
     </th>
     <th>
 
-      <button onClick={()=>handleDeleteCart(cartitem)} className="btn btn-ghost btn-xs">Purchase</button>
+      {/* <button onClick={()=>handleDeleteCart(cartitem)} className="btn btn-ghost btn-xs">Purchase</button> */}
     </th>
   </tr>)
 }

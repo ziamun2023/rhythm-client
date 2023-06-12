@@ -24,6 +24,9 @@ import AllTheClassManagement from "../Dashboard/mainDashboard/AllTheClassManagem
 import PrivateForAdmin from "../private/PrivateForAdmin";
 import PrivateForInstructor from "../private/PrivateForInstructor";
 import GiveFeedBack from "../Dashboard/mainDashboard/GiveFeedBack";
+import ErrorHandle from "../pages/error/ErrorHandle";
+import Allinstructor from "../pages/instructorPage/Allinstructor";
+
 
 
 
@@ -33,6 +36,7 @@ import GiveFeedBack from "../Dashboard/mainDashboard/GiveFeedBack";
     {
       path: "/",
       element: <Main></Main>,
+      errorElement:<ErrorHandle/>, 
       children:[
         {
             path:'/',
@@ -43,18 +47,28 @@ import GiveFeedBack from "../Dashboard/mainDashboard/GiveFeedBack";
           element:<SigninAcc/>
         },
         {
+          path: '/instructorPage',
+          element:<Allinstructor/>
+        },
+        {
           path: '/signup',
           element:<Signup/>
         },
         {
           path:'/allclass',
           element:<PrivateRoutes><ClassPage/></PrivateRoutes>
+        },
+        {
+          path:'*',
+          element:<ErrorHandle/>
+    
         }
       ]
     },
     {
       path:'Admindashboard',
       element:<PrivateForAdmin><Dashboard></Dashboard></PrivateForAdmin>,
+      errorElement:<ErrorHandle/>, 
       children:[
       
         {
@@ -72,6 +86,11 @@ import GiveFeedBack from "../Dashboard/mainDashboard/GiveFeedBack";
         {
           path:'feedback/:id',
           element:<><GiveFeedBack/></>
+        },
+        {
+          path:'*',
+          element:<ErrorHandle/>
+    
         }
       
       
@@ -80,6 +99,7 @@ import GiveFeedBack from "../Dashboard/mainDashboard/GiveFeedBack";
     {
       path:'studentDash',
       element:<PrivateRoutes><StudentDashboard></StudentDashboard></PrivateRoutes>,
+      errorElement:<ErrorHandle/>, 
 children:[
   
   {
@@ -89,12 +109,18 @@ children:[
   {
     path:'userhome',
     element:<><UserHome></UserHome></>
+  },
+  {
+    path:'*',
+    element:<ErrorHandle/>
+
   }
 ]
     },
     {
       path:'InstructorDashboard',
       element:<PrivateForInstructor><InstructorDashboard></InstructorDashboard></PrivateForInstructor>,
+      errorElement:<ErrorHandle/>, 
       children:[
         {
           path:'addnewclass',
@@ -111,6 +137,11 @@ children:[
         {
           path:'mystudents',
           element:<StudentOfInstructor></StudentOfInstructor>
+        },
+        {
+          path:'*',
+          element:<ErrorHandle/>
+    
         }
       ]
     }

@@ -25,6 +25,7 @@ const IfAdminExist=true
     {/* Page content here */}
     <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
   <Outlet/>
+  {/* <Link to='/studentDash/payment'><button className='btn bg-red-400'>pay</button></Link> */}
   </div> 
   <div className="drawer-side">
     <label htmlFor="my-drawer-2" className="drawer-overlay"></label> 
