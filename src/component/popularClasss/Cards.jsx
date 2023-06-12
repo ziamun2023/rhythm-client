@@ -66,16 +66,20 @@ const Cards = ({items}) =>{
     }
     return (
         <>
-             <div className={'shadow-lg'}>
+             <div className={'shadow-lg h-[600px]'}>
     <img className='w-[400px] h-[400px]' src={items.image} alt="" />
-   <div className='flex justify-around   text-2xl nav w-56 rounded-xl py-2 '>
+   <div className='flex ms-2 justify-around   text-2xl nav w-56 rounded-xl py-2 '>
    <p className='text-white'>{items.name}</p> <p className=' rounded-xl hover:bg-slate-100 duration-300  hover:text-black bg-black px-2'>${items.price}</p>
    </div>
-   <div className='    text-2xl nav w-56 rounded-xl py-2 '>
+  <div className='nav rounded-lg w-60 ms-2 mt-2'>
+  <p className='text-black '> <b>Instructor Name:</b> {items.instructorName}</p>
+  <p className='text-black '><b>Instructor Email:</b>{items.instructoremail}</p>
+  </div>
+   {/* <div className='    text-2xl nav w-20 rounded-xl py-2 '>
    <p className='text-white'>{items.instructoremail}</p> <p className=' rounded-xl hover:bg-slate-100 duration-300  hover:text-black bg-black px-2'>${items.instructoremail}</p>
    <p className=' rounded-xl hover:bg-slate-100 duration-300  hover:text-black bg-black px-2'> {items.  numberofStudent}</p>
   
-   </div>
+   </div> */}
  
 {
     AdminAccess?

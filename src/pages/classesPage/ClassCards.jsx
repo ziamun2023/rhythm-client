@@ -73,7 +73,7 @@ const ClassCards = ({items}) => {
         }
     }
     return (
-        <div className='shadow-lg '>
+        <div className='shadow-lg h-[600px] '>
     <img className='w-[400px] h-[400px] my-auto mx-auto' src={image} alt="" />
    <div className='flex justify-around ms-5  text-2xl nav w-56 rounded-xl py-2 '>
    <p className='text-white'>{name}</p> <p className=' rounded-xl hover:bg-slate-100 duration-300  hover:text-black bg-black px-2'>${items.price}</p>

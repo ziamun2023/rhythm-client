@@ -7,12 +7,12 @@ import { AuthContext } from '../../providers/AuthProvider';
 
 
 const StudentDashboard = () => {
-  const {logOut}=useContext(AuthContext)
-  const handleLogOut = () => {
-    logOut()
-      .then(() => {})
-      .catch((error) => console.log(error));
-  };
+  // const {logOut}=useContext(AuthContext)
+  // const handleLogOut = () => {
+  //   logOut()
+  //     .then(() => {})
+  //     .catch((error) => console.log(error));
+  // };
 
 
 const IfAdminExist=true
@@ -41,7 +41,7 @@ const IfAdminExist=true
 
                           <li><NavLink to="/allclass"><FaHome></FaHome> Select class</NavLink></li>
                           <li><NavLink to="/"><FaHome></FaHome> Home</NavLink></li>
-                          <li><NavLink ><FaHome></FaHome> <p onClick={handleLogOut}>Log out</p></NavLink></li>
+                          {/* <li><NavLink ><FaHome></FaHome> <p onClick={handleLogOut}>Log out</p></NavLink></li> */}
 
                         
                 

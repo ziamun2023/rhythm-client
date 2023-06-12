@@ -10,12 +10,12 @@ import { AuthContext } from '../../providers/AuthProvider';
 
 const Dashboard = () => {
 
-  const {logOut}=useContext(AuthContext)
-  const handleLogOut = () => {
-    logOut()
-      .then(() => {})
-      .catch((error) => console.log(error));
-  };
+  // const {logOut}=useContext(AuthContext)
+  // const handleLogOut = () => {
+  //   logOut()
+  //     .then(() => {})
+  //     .catch((error) => console.log(error));
+  // };
 
 
 
@@ -44,7 +44,7 @@ const Dashboard = () => {
     <hr />
     <br />
     <li><NavLink to="/"><FaHome></FaHome> Home</NavLink></li>
-                          <li><NavLink ><FaHome></FaHome> <p onClick={handleLogOut}>Log out</p></NavLink></li>
+                          {/* <li><NavLink ><FaHome></FaHome> <p onClick={handleLogOut}>Log out</p></NavLink></li> */}
                        
                     
                             {/* <li><NavLink to="/dashboard/userhome"><FaHome></FaHome> User Home</NavLink></li> */}

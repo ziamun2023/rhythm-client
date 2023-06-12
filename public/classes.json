@@ -8,7 +8,8 @@
         "price": 14.7,
         "instructorName":"Rebeka",
         "availableSeat":41,
-        "instructoremail":"rebeka@gmail.com"
+        "instructoremail":"rebeka@gmail.com",
+        "status":"pending"
 
 
     },
@@ -21,7 +22,8 @@
         "price": 14.7,
         "instructorName":"Harry dev",
         "availableSeat":22,
-        "instructorEmail":"harrydev@gmail.com"
+        "instructorEmail":"harrydev@gmail.com",
+        "status":"pending"
 
 
     },
@@ -34,7 +36,8 @@
         "price": 14.5,
         "instructorName":"Martin Luis",
         "availableSeat":5,
-        "instructorEmail":"martinluis@gmail.com"
+        "instructorEmail":"martinluis@gmail.com",
+        "status":"pending"
 
 
     },
@@ -46,7 +49,8 @@
         "price": 12.5,
         "instructorName":"Liza",
         "availableSeat":22,
-        "instructorEmail":"liza@gmail.com"
+        "instructorEmail":"liza@gmail.com",
+        "status":"pending"
 
 
     },
@@ -58,7 +62,8 @@
         "price": 14.5,
         "instructorName":"Monalisa",
         "availableSeat":11,
-        "instructorEmail":"monalisa@gmail.com"
+        "instructorEmail":"monalisa@gmail.com",
+        "status":"pending"
 
 
     },
@@ -70,7 +75,8 @@
         "price": 12.5,
         "instructorName":"Robert Downy",
         "availableSeat":21,
-        "instructorEmail":"robertdowny@gmail.com"
+        "instructorEmail":"robertdowny@gmail.com",
+        "status":"pending"
 
 
     },
@@ -82,7 +88,8 @@
         "price": 12.5,
         "instructorName":"Tony faze",
         "availableSeat":5,
-        "instructorEmail":"tonyfaze@gmail.com"
+        "instructorEmail":"tonyfaze@gmail.com",
+        "status":"pending"
 
 
     },
@@ -94,7 +101,8 @@
         "price": 12.9,
         "instructorName":"Michel Jorge",
         "availableSeat":12,
-        "instructorEmail":"micheljorge@gmail.com"
+        "instructorEmail":"micheljorge@gmail.com",
+        "status":"pending"
 
 
     },
@@ -106,7 +114,8 @@
         "price": 13.5,
         "instructorName":"Otalia zaima",
         "availableSeat":22,
-        "instructorEmail":"otaliazaima@gmail.com"
+        "instructorEmail":"otaliazaima@gmail.com",
+        "status":"pending"
 
 
     },
@@ -118,7 +127,8 @@
         "price": 12.5,
         "instructorName":"Zeniya",
         "availableSeat":13,
-        "instructorEmail":"zeniya@gmail.com"
+        "instructorEmail":"zeniya@gmail.com",
+        "status":"pending"
 
 
     },
@@ -130,7 +140,8 @@
         "price": 13.5,
         "instructorName":"Dabid hatson",
         "availableSeat":14,
-        "instructorEmail":"dabidhatson@gmail.com"
+        "instructorEmail":"dabidhatson@gmail.com",
+        "status":"pending"
 
 
     },
@@ -142,7 +153,8 @@
         "price": 12.5,
         "instructorName":"Marry jane",
         "availableSeat":5,
-        "instructorEmail":"marryjane@gmail.com"
+        "instructorEmail":"marryjane@gmail.com",
+        "status":"pending"
 
 
     },
@@ -154,7 +166,8 @@
         "price": 9.5,
         "instructorName":"Rocky",
         "availableSeat":11,
-        "instructorEmail":"rocky@gmail.com"
+        "instructorEmail":"rocky@gmail.com",
+        "status":"pending"
 
 
     },
@@ -166,7 +179,8 @@
         "price": 10.5,
         "instructorName":"Harry",
         "availableSeat":15,
-        "instructorEmail":"harry@gmail.com"
+        "instructorEmail":"harry@gmail.com",
+        "status":"pending"
 
 
     },
@@ -178,7 +192,8 @@
         "price": 14.5,
         "instructorName":"Dabid Atson",
         "availableSeat":20,
-        "instructorEmail":"dabidhatson@gmail.com"
+        "instructorEmail":"dabidhatson@gmail.com",
+        "status":"pending"
 
 
     }

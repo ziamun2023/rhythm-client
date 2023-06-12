@@ -21,6 +21,8 @@ import InstructorHome from "../Dashboard/instructorDash/InstructorHome";
 import ManageClass from "../Dashboard/instructorDash/ManageClass";
 import StudentOfInstructor from "../Dashboard/instructorDash/StudentOfInstructor";
 import AllTheClassManagement from "../Dashboard/mainDashboard/AllTheClassManagement";
+import PrivateForAdmin from "../private/PrivateForAdmin";
+import PrivateForInstructor from "../private/PrivateForInstructor";
 
 
 
@@ -51,20 +53,20 @@ import AllTheClassManagement from "../Dashboard/mainDashboard/AllTheClassManagem
     },
     {
       path:'Admindashboard',
-      element:<PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
+      element:<PrivateForAdmin><Dashboard></Dashboard></PrivateForAdmin>,
       children:[
       
         {
           path:'allProfile',
-          element:<AllStudent/>
+          element:<><AllStudent/></>
         },
         {
           path:'adminHome',
-          element:<AdminHome/>
+          element:<><AdminHome/></>
         },
         {
           path:'totalclassmanagement',
-          element:<AllTheClassManagement/>
+          element:<><AllTheClassManagement/></>
         }
       
       
@@ -77,17 +79,17 @@ children:[
   
   {
     path:'mycart',
-    element:<MyCart></MyCart>
+    element:<><MyCart></MyCart></>
   },
   {
     path:'userhome',
-    element:<UserHome></UserHome>
+    element:<><UserHome></UserHome></>
   }
 ]
     },
     {
       path:'InstructorDashboard',
-      element:<PrivateRoutes><InstructorDashboard></InstructorDashboard></PrivateRoutes>,
+      element:<PrivateForInstructor><InstructorDashboard></InstructorDashboard></PrivateForInstructor>,
       children:[
         {
           path:'addnewclass',

@@ -6,12 +6,12 @@ import { AuthContext } from '../../providers/AuthProvider';
 import { AiFillEdit } from "react-icons/ai";
 import { AiTwotoneSetting } from "react-icons/ai";
 const InstructorDashboard = () => {
-    const {logOut}=useContext(AuthContext)
-    const handleLogOut = () => {
-      logOut()
-        .then(() => {})
-        .catch((error) => console.log(error));
-    };
+    // const {logOut}=useContext(AuthContext)
+    // const handleLogOut = () => {
+    //   logOut()
+    //     .then(() => {})
+    //     .catch((error) => console.log(error));
+    // };
   
     return (
         <div className=''>
@@ -41,7 +41,7 @@ const InstructorDashboard = () => {
                    
                    {/* <li><NavLink to="/allclass"><FaHome></FaHome> Select class</NavLink></li> */}
                           <li><NavLink to="/"><FaHome></FaHome> Home</NavLink></li>
-                          <li><NavLink ><FaHome></FaHome> <p onClick={handleLogOut}>Log out</p></NavLink></li>
+                          {/* <li><NavLink ><FaHome></FaHome> <p onClick={handleLogOut}>Log out</p></NavLink></li> */}
                 
                         {/* <li><NavLink to="/dashboard/userhome"><FaHome></FaHome> User Home</NavLink></li> */}
                         {/* <li><NavLink to="/"><FaCalendarAlt></FaCalendarAlt> Reservations</NavLink></li>

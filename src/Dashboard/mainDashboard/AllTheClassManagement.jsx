@@ -1,11 +1,48 @@
 import React from 'react';
 import UseAllclass from '../../hooks/UseAllclass';
-import ManageClassCards from './ManageClassCards';
+// import ManageClassCards from './ManageClassCards';
 import { Slide } from 'react-awesome-reveal';
+import { useQuery } from '@tanstack/react-query';
+import Swal from 'sweetalert2';
 
 const AllTheClassManagement = () => {
     const alltheclassByInstructors=UseAllclass()
     console.log(alltheclassByInstructors[0])
+
+    
+
+    const {data: allInstClass =[], refetch}=useQuery(['allClass'],async()=>{
+        const res=await fetch('http://localhost:5000/allclass')
+        return res.json()
+    })
+
+
+    
+    const handleApprove=(id)=>{
+        console.log(id)
+  fetch(`http://localhost:5000/allclass/approve/${id}`,{
+    method:'PATCH'
+  })
+  .then(res=>res.json())
+  .then(data=>{
+    // console.log(data)
+    if(data.modifiedCount){
+        refetch()
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Instructor has made',
+            showConfirmButton:false,
+            timer:1500
+            
+        })
+    }
+  })
+    }
+
+
+
+
     return (
         <div className='w-full'>
     <Slide>        <p className='text-3xl text-center my-10 font-bold'>Manage All the classes</p></Slide>
@@ -30,7 +67,42 @@ const AllTheClassManagement = () => {
     <tbody>
       {
 
-alltheclassByInstructors[0].map((items,index)=><ManageClassCards key={items._id} items={items} index={index}></ManageClassCards>)
+allInstClass.map((items,index)=>  <tr>
+<th>
+{index+1}
+</th>
+<td>
+  <div className="flex items-center space-x-3">
+    <div className="avatar">
+      <div className="mask mask-squircle w-12 h-12">
+        <img src={items.image} alt="Avatar Tailwind CSS Component" />
+      </div>
+    </div>
+    <div>
+      <div className="font-bold"></div>
+      <div className="text-sm opacity-50"></div>
+    </div>
+  </div>
+</td>
+<td>
+{items.instructorName}
+  <br/>
+  <span className="badge badge-ghost badge-sm">{items.instructorEmail}</span>
+</td>
+<td>{items.availableSeat}</td>
+<td>{items.status}</td>
+<th>
+  <button onClick={()=>handleApprove(items._id)} className="btn btn-ghost btn-xs bg-green-500  text-black mx-2">Approve</button>
+  <button className="btn btn-ghost btn-xs text-black bg-red-500">Deny</button>
+ 
+
+</th>
+<th>
+<button className="btn btn-ghost btn-xs text-black bg-yellow-500">feedback</button>
+ 
+
+</th>
+</tr>)
 
 
       } 
