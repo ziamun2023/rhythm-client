@@ -11,7 +11,7 @@ import Allusers from '../../hooks/Allusers';
 const AllStudent = () => {
 
     const {data: users =[], refetch}=useQuery(['allusers'],async()=>{
-        const res=await fetch('http://localhost:5000/studentProfile')
+        const res=await fetch('https://music-server-psi.vercel.app/studentProfile')
         return res.json()
     })
 
@@ -19,7 +19,7 @@ const AllStudent = () => {
 
     const handleMakeAnAdmin=(id)=>{
         console.log(id)
-fetch(`http://localhost:5000/studentProfile/admin/${id}`,{
+fetch(`https://music-server-psi.vercel.app/studentProfile/admin/${id}`,{
     method:'PATCH'
 })
 .then(res=>res.json())
@@ -42,7 +42,7 @@ fetch(`http://localhost:5000/studentProfile/admin/${id}`,{
 
     const handleMakeAnInstructor=(id)=>{
       console.log(id)
-fetch(`http://localhost:5000/studentProfile/instructor/${id}`,{
+fetch(`https://music-server-psi.vercel.app/studentProfile/instructor/${id}`,{
   method:'PATCH'
 })
 .then(res=>res.json())
@@ -76,7 +76,7 @@ fetch(`http://localhost:5000/studentProfile/instructor/${id}`,{
       cancelButtonText: 'Cancel'
     }).then(result => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/delete/${id}`, {
+        fetch(`https://music-server-psi.vercel.app/delete/${id}`, {
           method: 'DELETE'
         })
           .then(res => res.json())

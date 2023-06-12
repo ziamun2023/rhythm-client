@@ -28,7 +28,8 @@ const Popularclass = () => {
 const allclass=UseAllclass()
     return (
    <div >
-         <div className={isDarkMode?" bg-black" : "bg-white"}>
+      <div className="hidden lg:block">
+      <div className={isDarkMode?" bg-black" : "bg-white"}>
           <p>Popular Classes</p>
            <Swiper
         slidesPerView={4}
@@ -49,6 +50,12 @@ const allclass=UseAllclass()
 
       </Swiper>
         </div>
+      </div>
+      <div className="lg:hidden">
+      {
+    allclass[0].slice(0,6).map(items=><SwiperSlide > <Cards key={items._id} items={items}></Cards></SwiperSlide>)
+ }
+      </div>
    </div>
     );
 };
