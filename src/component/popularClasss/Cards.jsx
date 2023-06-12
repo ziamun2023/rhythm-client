@@ -25,7 +25,9 @@ const Cards = ({items}) =>{
     const handleAddToCart = item => {
         // console.log(item);
         if(user && user.email){
-            const cartItem = {classId: _id, name, image, price, email: user.email}
+            const cartItem = {classId: _id, name, image, price, email: user.email , availableSeat: item.availableSeat,
+                instructorEmail: item.instructorEmail,
+                instructorName: item.instructorName}
             fetch('http://localhost:5000/postfav', {
                 method: 'POST',
                 headers: {
@@ -69,12 +71,17 @@ const Cards = ({items}) =>{
    <div className='flex justify-around   text-2xl nav w-56 rounded-xl py-2 '>
    <p className='text-white'>{items.name}</p> <p className=' rounded-xl hover:bg-slate-100 duration-300  hover:text-black bg-black px-2'>${items.price}</p>
    </div>
+   <div className='    text-2xl nav w-56 rounded-xl py-2 '>
+   <p className='text-white'>{items.instructoremail}</p> <p className=' rounded-xl hover:bg-slate-100 duration-300  hover:text-black bg-black px-2'>${items.instructoremail}</p>
+   <p className=' rounded-xl hover:bg-slate-100 duration-300  hover:text-black bg-black px-2'> {items.  numberofStudent}</p>
+  
+   </div>
  
 {
     AdminAccess?
    "": <button className="btn btn-secondary my-4" onClick={()=>handleAddToCart(items)}>add to cart</button>
 }
-<ul class="circles">
+{/* <ul class="circles">
           
           <li></li>
           <li></li>
@@ -86,7 +93,7 @@ const Cards = ({items}) =>{
           <li></li>
           <li></li>
           <li></li>
-  </ul>
+  </ul> */}
     </div>
         </>
     );

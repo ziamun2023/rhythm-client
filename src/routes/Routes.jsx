@@ -15,6 +15,11 @@ import AllStudent from "../Dashboard/allStudentProfile/AllStudent";
 import StudentDashboard from "../Dashboard/StudetnDashboard/StudentDashboard";
 import UserHome from "../Dashboard/StudetnDashboard/UserHome";
 import AdminHome from "../Dashboard/mainDashboard/AdminHome";
+import InstructorDashboard from "../Dashboard/instructorDash/InstructorDashboard";
+import AddNewClass from "../Dashboard/instructorDash/AddNewClass";
+import InstructorHome from "../Dashboard/instructorDash/InstructorHome";
+import ManageClass from "../Dashboard/instructorDash/ManageClass";
+import StudentOfInstructor from "../Dashboard/instructorDash/StudentOfInstructor";
 
 
 
@@ -74,5 +79,27 @@ children:[
     element:<UserHome></UserHome>
   }
 ]
+    },
+    {
+      path:'InstructorDashboard',
+      element:<PrivateRoutes><InstructorDashboard></InstructorDashboard></PrivateRoutes>,
+      children:[
+        {
+          path:'addnewclass',
+          element:<AddNewClass></AddNewClass>
+        },
+        {
+          path:'InstructorHome',
+          element:<InstructorHome></InstructorHome>
+        },
+        {
+          path:'manageclass',
+          element:<ManageClass></ManageClass>
+        },
+        {
+          path:'mystudents',
+          element:<StudentOfInstructor></StudentOfInstructor>
+        }
+      ]
     }
   ]);

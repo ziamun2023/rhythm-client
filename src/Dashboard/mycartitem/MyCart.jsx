@@ -1,9 +1,13 @@
 import Swal from "sweetalert2";
 import UseFavCart from "../../hooks/UseFavCart";
+import UseAllclass from "../../hooks/UseAllclass";
 
 
 const MyCart = () => {
     const [cart,refetch]=UseFavCart()
+    console.log(cart)
+    const data=UseAllclass()
+    console.log(data)
     
     const  totalPrice= cart.reduce((sum,item)=>item.price+sum,0 )
     const handleDeleteCart=cartitem=>{
@@ -51,7 +55,8 @@ const MyCart = () => {
         #
         </th>
         <th>Class Name</th>
-        <th>Instructor</th>
+        <th>Instructor Name and Email</th>
+        <th>Available Seat</th>
         <th>Price</th>
         <th></th>
       </tr>
@@ -72,24 +77,30 @@ cart.map((cartitem,index)=> <tr key={cartitem._id}>
         </div>
         <div>
           <div className="font-bold">{cartitem.name}</div>
-          <div className="text-sm opacity-50">United States</div>
+          <div className="text-sm opacity-50"></div>
         </div>
       </div>
     </td>
     <td>
-      Zemlak, Daniel and Leannon
+    <span className="">{cartitem.instructorName}</span>
       <br/>
-      <span className="badge badge-ghost badge-sm">Desktop Support Technician</span>
+   
+      <span className="">Email:{cartitem.instructorEmail}</span>
     </td>
+    <td>{cartitem.availableSeat}</td>
     <td>{cartitem.price}</td>
     <th>
 
       <button onClick={()=>handleDeleteCart(cartitem)} className="btn btn-ghost btn-xs">Delete</button>
     </th>
+    <th>
+
+      <button onClick={()=>handleDeleteCart(cartitem)} className="btn btn-ghost btn-xs">Purchase</button>
+    </th>
   </tr>)
 }
      
-      {/* row 2 */}
+     
     
     </tbody>
     {/* foot */}

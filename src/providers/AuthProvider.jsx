@@ -13,7 +13,9 @@ const AuthProvider = ({ children }) => {
     const [adminHere,setAdminhere]=useState(null)
 
     // const [day,setDay]=useState(false)
-      const admins  =admin.filter(item=>item.role==='admin')
+    const admins  =admin.filter(item=>item.role==='admin')
+    const instructors  =admin.filter(item=>item.role==='instructor')
+    console.log(instructors)
     //   console.log(admins)
       const [isDarkMode, setIsDarkMode] = useState(false)
     //   if(isDarkMode){
@@ -104,7 +106,8 @@ useEffect(() => {
         adminHere,
         setAdminhere,
         setIsDarkMode,
-        isDarkMode
+        isDarkMode,
+        instructors
     }
 
     return (
