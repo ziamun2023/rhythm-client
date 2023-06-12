@@ -23,6 +23,7 @@ import StudentOfInstructor from "../Dashboard/instructorDash/StudentOfInstructor
 import AllTheClassManagement from "../Dashboard/mainDashboard/AllTheClassManagement";
 import PrivateForAdmin from "../private/PrivateForAdmin";
 import PrivateForInstructor from "../private/PrivateForInstructor";
+import GiveFeedBack from "../Dashboard/mainDashboard/GiveFeedBack";
 
 
 
@@ -67,6 +68,10 @@ import PrivateForInstructor from "../private/PrivateForInstructor";
         {
           path:'totalclassmanagement',
           element:<><AllTheClassManagement/></>
+        },
+        {
+          path:'feedback/:id',
+          element:<><GiveFeedBack/></>
         }
       
       

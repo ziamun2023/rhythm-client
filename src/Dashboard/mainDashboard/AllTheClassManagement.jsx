@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import UseAllclass from '../../hooks/UseAllclass';
 // import ManageClassCards from './ManageClassCards';
 import { Slide } from 'react-awesome-reveal';
 import { useQuery } from '@tanstack/react-query';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const AllTheClassManagement = () => {
     const alltheclassByInstructors=UseAllclass()
@@ -63,48 +64,13 @@ const AllTheClassManagement = () => {
     }
   })
     }
+  
+
+    
+    
+  
 
 
-
-
-
-
-    const handleUpdate=(event,_id)=>{
-        event.preventDefault()
-            const form=event.target
-          
-            const comment=form.comment.value
-            
-    const feedback={comment}
-        
-    
-    
-    
-    
-    
-    
-        fetch(`https://localhost:5000/updatefeedback/${id}`,{
-            method: "PUT",
-            headers: {'Content-Type':'application/json'},
-            body : JSON.stringify(feedback)
-        })
-        .then(res=>res.json())
-        .then(data=>{
-            if(data.modifiedCount>0){
-                Swal.fire({
-                  title: 'success!',
-                  text: 'Successfully Updated',
-                  icon: 'success',
-                  confirmButtonText: 'Cool'
-                })
-                navigate('/totalclassmanagement')
-              
-               }
-            
-        })
-    }
-    
-    
 
 
 
@@ -163,11 +129,9 @@ allInstClass.map((items,index)=>  <tr>
 
 </th>
 <th>
-<div className="  text-black">
-    <form  onSubmit={()=>handleUpdate(items._id)}   action="">
-        <input  className='bg-yellow-600 h-10'  name='comment'  type="text" />
-        <input  className='bg-red-500 text-black btn' type='submit' value='send' />
-    </form>
+<div className=" text-black">
+<Link to={`/Admindashboard/feedback/${items._id}`}> feed back</Link>
+  
 </div>
  
 
