@@ -81,19 +81,7 @@ const Cards = ({items}) =>{
     AdminAccess?
    "": <button className="btn btn-secondary my-4" onClick={()=>handleAddToCart(items)}>add to cart</button>
 }
-{/* <ul class="circles">
-          
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-  </ul> */}
+
     </div>
         </>
     );

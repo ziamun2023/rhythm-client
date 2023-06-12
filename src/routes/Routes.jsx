@@ -20,6 +20,7 @@ import AddNewClass from "../Dashboard/instructorDash/AddNewClass";
 import InstructorHome from "../Dashboard/instructorDash/InstructorHome";
 import ManageClass from "../Dashboard/instructorDash/ManageClass";
 import StudentOfInstructor from "../Dashboard/instructorDash/StudentOfInstructor";
+import AllTheClassManagement from "../Dashboard/mainDashboard/AllTheClassManagement";
 
 
 
@@ -60,6 +61,10 @@ import StudentOfInstructor from "../Dashboard/instructorDash/StudentOfInstructor
         {
           path:'adminHome',
           element:<AdminHome/>
+        },
+        {
+          path:'totalclassmanagement',
+          element:<AllTheClassManagement/>
         }
       
       

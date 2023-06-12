@@ -5,10 +5,17 @@ import { NavLink,Outlet } from 'react-router-dom';
 import {  FaWallet, FaHome, FaUtensils, FaBook, FaUsers } from 'react-icons/fa';
 import { AiOutlineAppstoreAdd } from "react-icons/ai";
 import { Fade } from 'react-awesome-reveal';
+import { AuthContext } from '../../providers/AuthProvider';
 
 
 const Dashboard = () => {
 
+  const {logOut}=useContext(AuthContext)
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
 
 
 
@@ -28,11 +35,16 @@ const Dashboard = () => {
     <Fade>
 
     <li><NavLink to="/Admindashboard/adminHome"><FaHome></FaHome> Admin Home</NavLink></li>
-                            <li><NavLink to="/dashboard/addItem"> <FaUtensils></FaUtensils> Add an Item</NavLink></li>
-                            <li><NavLink to="/dashboard/manageitems"><FaWallet></FaWallet> Manage Items</NavLink></li>
-                            <li><NavLink to="/"><AiOutlineAppstoreAdd></AiOutlineAppstoreAdd> Manage Bookings(not implemented)</NavLink></li>
+                            
+                            <li><NavLink to="/Admindashboard/totalclassmanagement"><FaWallet></FaWallet> Manage Class</NavLink></li>
+                          
                             <li><NavLink to="/Admindashboard/allProfile"><FaUsers></FaUsers> All Users</NavLink></li>
     </Fade>
+
+    <hr />
+    <br />
+    <li><NavLink to="/"><FaHome></FaHome> Home</NavLink></li>
+                          <li><NavLink ><FaHome></FaHome> <p onClick={handleLogOut}>Log out</p></NavLink></li>
                        
                     
                             {/* <li><NavLink to="/dashboard/userhome"><FaHome></FaHome> User Home</NavLink></li> */}
